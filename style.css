@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Adicionado aqui para valer para o projeto todo */
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* --- ESTRUTURA FIXA (HEADER) --- */
+header {
+  background: linear-gradient(135deg, #008273d8, #3a8d89d2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+#menu {
+  height: 4em;
+  padding: 1em;
+}
+
+#menu ol {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2em;
+  font-size: 2em;
+  color: white;
+  list-style-type: none;
+}
+
+#menu ol li a {
+  text-decoration: none;
+  color: white;
+}
+
+#menu a:hover {
+  text-decoration: none;
+  color: rgba(12, 12, 10, 0.656);
+  transform: scale(1.5);
+}
+
+/* --- CONFIGURAÇÃO GLOBAL DAS SEÇÕES --- */
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- SEÇÃO INÍCIO (COM IMAGEM) --- */
+main #inicio {
+  padding-top: 4em; /* Compensa o header fixo */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("jfimg2.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-weight: 900;
+}
+
+/* Conteúdo interno do Início */
+#inicio div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 80%;
+  gap: 2em;
+  text-shadow: #051111 4px 1px;
+  text-align: center;
+}
+
+#inicio h2 {
+  font-size: 4em;
+}
+#inicio span {
+  font-size: 3em;
+}
+
+#inicio button {
+  padding: 10px 25px;
+  font-size: 2.4em;
+  border-radius: 20px;
+  background-color: rgba(239, 76, 17, 0.845);
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+#inicio button:hover {
+  background-color: #3a8d89d2;
+  transform: scale(1.05);
+}
+
+/* --- SEÇÃO Sobre Nós --- */
+#sobre div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2em;
+  width: 90%;
+  height: 90%;
+  box-shadow: 0px 0px 0px 1px #f2f2f4c2;
+}
+
+#sobre h2 {
+  font-size: 2em;
+  color: #3a8d89d2;
+}
+
+#sobre p {
+  text-align: justify;
+  padding: 10px;
+  font-size: 1.4em;
+}
+
+/* --- SEÇÃO Conteudo --- */
+#conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6em; /* Para o título não ficar debaixo do menu fixo */
+  height: auto;
+  min-height: 100vh;
+}
+
+#conteudo h2 {
+  font-size: 3em;
+  margin-bottom: 2em;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2em;
+  width: 95%;
+  place-items: center;
+}
+
+#conteudo .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: left;
+  padding: 2em;
+  gap: 2em;
+  background-color: #f2f2f43f;
+  width: 400px;
+  height: 300px;
+  border-radius: 2em;
+}
+
+/* --- SEÇÃO Sugestões --- */
+.containerSugestoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  gap: 1em;
+
+  width: 90%;
+  height: 100%;
+}
+
+#sugestoes h2 {
+  font-size: 3em;
+  color: #3a8d89d2;
+}
+
+#sugestoes form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+  background-color: rgba(184, 184, 181, 0.354);
+  width: 80%;
+  height: 80%;
+  padding: 2em;
+}
+
+#sugestoes form h3 {
+  font-size: 2em;
+}
+
+#sugestoes form input {
+  width: 100%;
+  height: 2.2 em;
+}
+#sugestoes form textarea {
+  width: 100%;
+  height: 60%;
+  padding: 1em;
+}
+
+#sugestoes form #botao {
+  align-self: flex-end;
+  width: 20%;
+}
+
+/* --- SEÇÃO contato --- */
+
+/* --- CORES DAS DEMAIS SEÇÕES --- */
+/* Agrupando por cor para economizar linhas */
+
+#conteudo {
+  background-color: #3a8d89d2;
+  color: white;
+}
+
+footer #contato {
+  background-color: #3a8d89d2;
+  color: white;
+}
+
+footer section {
+  width: 100%;
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
