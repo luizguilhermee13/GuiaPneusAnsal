@@ -1,13 +1,13 @@
 const container = document.querySelector(".container-grid");
 const cardsData = [
   {
-    link: "https://docs.google.com/document/d/1c2_VUGzoS8Fq9jg4IQWYGoQCDlZuOX-rdW-iuvhuMyQ/edit?tab=t.rhrdtly363u",
+    link: "https://docs.google.com/presentation/d/1JkLDrikK8RxpG_wH6yKyC95S0wbww8J8Zm7tPxBIz9c/edit?slide=id.gc6f919934_0_0#slide=id.gc6f919934_0_0",
     titulo: "Guia Calibragem",
     descricao:
       "Padrões de PSI por veículo e cronograma de aferição para reduzir o desgaste prematuro.",
   },
   {
-    link: "https://docs.google.com/document/d/1c2_VUGzoS8Fq9jg4IQWYGoQCDlZuOX-rdW-iuvhuMyQ/edit?tab=t.95hwu43nf90j",
+    link: "https://docs.google.com/presentation/d/1oFxhTgtsWInoYHVNgXYNzEmW_JU2FiAF517Qb41Dlek/edit?usp=sharing",
     titulo: "Guia Movimentação",
     descricao:
       "Passo a passo para registrar trocas de pneus entre eixos ou substituição por avaria.",
@@ -50,6 +50,8 @@ const cardsData = [
   },
 ];
 
+// apenas o guia da moivmentação está conluido até o momento
+
 // Usando map para transformar os dados em strings de HTML
 const htmlCards = cardsData
   .map(
@@ -66,3 +68,27 @@ const htmlCards = cardsData
 
 // Insere tudo de uma vez no seu HTML
 container.innerHTML = htmlCards;
+
+//ENVIAR A SUGESTÂO PARA O WHATSAPP
+
+const botao = document.getElementById("botao");
+
+botao.addEventListener("click", () => {
+  const topico = document.querySelector("input").value;
+
+  const mensagem = document.querySelector("textarea").value;
+
+  const texto = `
+*Nova Sugestão do Guia Ansal*
+
+*Tópico:* ${topico}
+
+*Mensagem:* ${mensagem}
+  `;
+
+  const numero = "5511993007413";
+
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+  window.open(url, "_blank");
+});
